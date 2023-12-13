@@ -41,8 +41,7 @@ def handle_help(message):
 
 @bot.message_handler(commands=['help'])
 def get_menu(message):
-    for i in commands.values():#функция вроде получилась, но она выводит сообщения по одному
-        bot.send_message(message.chat.id, f"{i}")#как их склеить?
+    bot.send_message(message.chat.id, "\n".join(commands.values()))#как их склеить?
 
 
 @bot.message_handler(commands=['info'])
